@@ -1,8 +1,47 @@
 ---
 layout: default
 title: About 
+news:
+ - title: Big sale 
+   description: Don't miss our big summer sale 
+   categorie: shopping
+   date: 21 Jan
+   url: https://www.sale.de 
+ - title: Big sale 
+   description: Don't miss our big summer sale 
+   categorie: shopping
+   date: 21 Jan
+   url: https://www.sale.de 
+ - title: Big sale 
+   description: Don't miss our big summer sale 
+   categorie: shopping
+   date: 21 Jan
+   url: https://www.sale.de 
+ - title: Big sale 
+   description: Don't miss our big summer sale 
+   categorie: shopping
+   date: 21 Jan
+   url: https://www.sale.de 
 ---
 
-<section>
-    This is a section only for the about page
-</section>
+<section class="grid-spaceBetween padded bg-featured latest-news">
+    
+    {% for item in page.news %}
+    <!-------------- Cards  -->
+    <div class="col-3_xs-8"> 
+        <div class="card">
+            <div class="bg-image">
+                <span> {{item.categorie}} </span>
+            </div>  
+      
+            <div class="post-info">
+                <p class="date"> {{item.date}} </p>
+                <h3> {{item.title}} </h3>
+                <p> {{item.description}} </p>
+                <a href="{{item.url}}"> Find out more &nbsp &#10141;</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    
+  </section>
